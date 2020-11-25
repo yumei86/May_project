@@ -8,7 +8,7 @@ import time
 import pyautogui
 
 
-#-------將網頁開啟的動作換為背景執行---------
+#-------將網頁開啟的動作換為背景執行----------
 
 options = webdriver.ChromeOptions()
 options.add_argument("headless")
