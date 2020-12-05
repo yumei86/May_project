@@ -39,13 +39,14 @@ store_name = []
 store_loca = []
 
 #-------打開[台北基隆]評論爬名字(要記得關掉)-------
-for items in range(167):
+for items in range(2):
     num = str(items + 3)
     driver.find_element_by_xpath("//div[2]/div/div[3]/div["+ num +"]/div[2]/div").click()
     time.sleep(1)
 
     s1 = WebDriverWait(driver, 15).until(EC.presence_of_all_elements_located((By.XPATH, '//*[@class="qqvbed-p83tee-lTBxed"]')))
     print(s1[0].text)
+    print(s1[1].text.split("\n"))
     store_name.append(s1[0].text)
     
     try:
@@ -58,8 +59,7 @@ for items in range(167):
     driver.find_element_by_xpath("//div[3]/div/div/span/span/span").click()
     time.sleep(1)
 
-
-
+'''
 ans = ['','']
 with open('Ramen_name.csv', 'w', newline='') as csvfile:
     
@@ -69,5 +69,5 @@ with open('Ramen_name.csv', 'w', newline='') as csvfile:
         ans[0] = store_name[i]
         ans[1] = store_loca[i]
         writer.writerow([ans[0],ans[1]])
-
+'''
 driver.close() #關掉瀏覽器

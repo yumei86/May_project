@@ -11,7 +11,7 @@ import pyautogui
 #-------將網頁開啟的動作換為背景執行----------
 
 options = webdriver.ChromeOptions()
-options.add_argument("headless")
+options.add_argument("--headless")
 options.add_experimental_option('excludeSwitches', ['enable-automation'])  #把新版google的自動控制提醒關掉
 options.add_argument("window-size=1920,1080")
 driver = webdriver.Chrome(executable_path='chromedriver',options=options)
